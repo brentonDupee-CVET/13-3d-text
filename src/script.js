@@ -59,7 +59,7 @@ fontLoader.load(
         const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
         // const donutMaterial = new THREE.MeshMatcapMaterial()
         // donutMaterial.matcap = matcapTexture
-        for(let i = 0; i < 300; i++)
+        for(let i = 0; i < 150; i++)
         {
             const donut = new THREE.Mesh(donutGeometry, material)
 
@@ -70,13 +70,36 @@ fontLoader.load(
             donut.rotation.x = Math.random() * Math.PI
             donut.rotation.y = Math.random() * Math.PI
 
-            const scale = (Math.random() - .25)
+            const scale = (Math.random()) * 0.5
             donut.scale.set(scale, scale, scale)
 
             scene.add(donut)
         }
+
+        const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
+        // const donutMaterial = new THREE.MeshMatcapMaterial()
+        // donutMaterial.matcap = matcapTexture
+        for(let i = 0; i < 150; i++)
+        {
+            const cube = new THREE.Mesh(cubeGeometry, material)
+
+            cube.position.x = (Math.random() - 0.5) * 10
+            cube.position.y = (Math.random() - 0.5) * 10
+            cube.position.z = (Math.random() - 0.5) * 10
+
+            cube.rotation.x = Math.random() * Math.PI
+            cube.rotation.y = Math.random() * Math.PI
+
+            const scale = (Math.random()) * 0.5
+            cube.scale.set(scale, scale, scale)
+
+            scene.add(cube)
+        }
     }
 )
+
+// const sphereGeometry = new THREE.SphereGeometry(0.5, 64, 64)
+// scene.add(new THREE.Mesh(sphereGeometry, new THREE.MeshMatcapMaterial({matcap: matcapTexture})))
 
 /**
  * Sizes
